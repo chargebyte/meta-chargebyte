@@ -21,4 +21,4 @@ do_compile() {
     :
 }
 
-FILES_${PN}-firmware += "${nonarch_base_libdir}/firmware/"
+FILES:${PN}-firmware += "${nonarch_base_libdir}/firmware/"

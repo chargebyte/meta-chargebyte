@@ -5,7 +5,7 @@ inherit module kernel-module-split
 
 MAKE_TARGETS = "all"
 MODULE_NAME = "wlan"
-PKG_${PN} = "kernel-module-${MODULE_NAME}"
+PKG:${PN} = "kernel-module-${MODULE_NAME}"
 
 do_install() {
     # modules
