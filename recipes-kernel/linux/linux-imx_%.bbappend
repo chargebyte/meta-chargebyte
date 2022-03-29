@@ -1,5 +1,7 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
+# upstream is on 5.x
+KERNEL_VERSION_SANITY_SKIP="1"
 # override kernel source
 SRCBRANCH = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
              'v4.11.12-evacharge-se-dfs', 'v4.9.11', d)}"
