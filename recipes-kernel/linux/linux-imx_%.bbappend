@@ -1,7 +1,5 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
-# upstream is on 5.x
-KERNEL_VERSION_SANITY_SKIP="1"
 # override kernel source
 SRCBRANCH = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
              'v4.11.12-evacharge-se-dfs', 'v4.9.11', d)}"
@@ -16,6 +14,11 @@ SRC_URI = "\
            ${@bb.utils.contains('SUBMACHINE', 'oppcharge', '', 'file://defconfig', d)} \
           "
 LOCALVERSION = "-in-tech-sc"
+
+LINUX_VERSION = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
+                 '4.11.12', '4.9.11', d)}"
+
+KCONFIG_MODE="--alldefconfig"
 
 COMPATIBLE_MACHINE = "(mxs|mx6|mx7|mx8)"
 
