@@ -24,12 +24,3 @@ COMPATIBLE_MACHINE = "(mxs|mx6|mx7|mx8)"
 
 # OppCharge kernel tree contains the required defconfig
 KERNEL_DEFCONFIG = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', 'evacharge-se_defconfig', '', d)}"
-
-do_preconfigure:prepend() {
-    if [ -n "${KERNEL_DEFCONFIG}" ]; then
-        DEFC=${S}/arch/${ARCH}/configs/${KERNEL_DEFCONFIG}
-        if [ -f "${DEFC}" ]; then
-            install -p -m 0644 "${DEFC}" ${WORKDIR}/defconfig
-        fi
-    fi
-}
