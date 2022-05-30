@@ -23,4 +23,4 @@ KCONFIG_MODE="--alldefconfig"
 COMPATIBLE_MACHINE = "(mxs|mx6|mx7|mx8)"
 
 # OppCharge kernel tree contains the required defconfig
-KERNEL_DEFCONFIG = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', 'evacharge-se_defconfig', '', d)}"
+KBUILD_DEFCONFIG = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', 'evacharge-se_defconfig', '', d)}"
