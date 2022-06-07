@@ -13,7 +13,7 @@ SRC_URI = "\
            git://github.com/I2SE/linux.git;protocol=https;branch=${SRCBRANCH} \
            ${@bb.utils.contains('SUBMACHINE', 'oppcharge', '', 'file://defconfig', d)} \
           "
-LOCALVERSION = "-in-tech-sc"
+LINUX_VERSION_EXTENSION = "-in-tech-sc"
 
 LINUX_VERSION = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
                  '4.11.12', '4.9.11', d)}"
