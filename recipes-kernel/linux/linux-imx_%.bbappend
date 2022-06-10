@@ -4,7 +4,7 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 SRCBRANCH = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
              'v4.11.12-evacharge-se-dfs', 'v4.9.11', d)}"
 SRCREV    = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
-             '9a6be4a56f84fa95ec0c2cb85671972894051ca0', '6e9d0da6341b0ceeff4bc62c936d544d36044958', d)}"
+             '706374d3446d8759d0fa3acf3ae4dddf60db3d3d', '87f8fccf0251394fc6fbd5bdddff573230e4e944', d)}"
 LIC_FILES_CHKSUM = "file://COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 
