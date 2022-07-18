@@ -8,10 +8,10 @@ SRCREV    = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
 
 # OppCharge requires a different defconfig from its kernel tree, see KERNEL_DEFCONFIG below
 SRC_URI = "\
-           git://github.com/I2SE/linux.git;protocol=https;branch=${SRCBRANCH} \
+           git://github.com/chargebyte/linux.git;protocol=https;branch=${SRCBRANCH} \
            ${@bb.utils.contains('SUBMACHINE', 'oppcharge', '', 'file://defconfig', d)} \
           "
-LOCALVERSION = "-in-tech-sc"
+LOCALVERSION = "-chargebyte"
 
 COMPATIBLE_MACHINE = "(mxs|mx6|mx7|mx8)"
 

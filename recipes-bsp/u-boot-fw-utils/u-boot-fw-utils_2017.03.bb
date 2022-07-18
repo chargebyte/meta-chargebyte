@@ -9,7 +9,7 @@ PE = "1"
 
 SRCBRANCH = "v2017.03-tarragon"
 SRC_URI = " \
-    git://github.com/I2SE/u-boot.git;protocol=https;branch=${SRCBRANCH} \
+    git://github.com/chargebyte/u-boot.git;protocol=https;branch=${SRCBRANCH} \
     file://default-gcc.patch \
     file://fw_env.config \
 "
