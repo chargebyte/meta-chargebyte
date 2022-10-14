@@ -4,15 +4,16 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 SRCBRANCH = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
              'v4.11.12-evacharge-se-dfs', 'v4.9.11', d)}"
 SRCREV    = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
-             '706374d3446d8759d0fa3acf3ae4dddf60db3d3d', '87f8fccf0251394fc6fbd5bdddff573230e4e944', d)}"
+             'c2a062d7c11ec9e0617155e09830a035af6923a9', '87f8fccf0251394fc6fbd5bdddff573230e4e944', d)}"
 LIC_FILES_CHKSUM = "file://COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
-
 
 # OppCharge requires a different defconfig from its kernel tree, see KERNEL_DEFCONFIG below
 SRC_URI = "\
            git://github.com/chargebyte/linux.git;protocol=https;branch=${SRCBRANCH} \
            ${@bb.utils.contains('SUBMACHINE', 'oppcharge', '', 'file://defconfig', d)} \
           "
+
+inherit kernel_wireless_regdb
 
 LINUX_VERSION_EXTENSION = "-chargebyte"
 
