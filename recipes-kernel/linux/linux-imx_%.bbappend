@@ -4,9 +4,9 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 SRCBRANCH = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
              'v4.11.12-evacharge-se-dfs', 'v4.9.11', d)}"
 SRCREV    = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
-             '706374d3446d8759d0fa3acf3ae4dddf60db3d3d', '87f8fccf0251394fc6fbd5bdddff573230e4e944', d)}"
-LIC_FILES_CHKSUM = "file://COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
+             'e428eefb422653dcd5983ff685b9b0972a961b3c', '87f8fccf0251394fc6fbd5bdddff573230e4e944', d)}"
 
+LIC_FILES_CHKSUM = "file://COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 # OppCharge requires a different defconfig from its kernel tree, see KERNEL_DEFCONFIG below
 SRC_URI = "\
