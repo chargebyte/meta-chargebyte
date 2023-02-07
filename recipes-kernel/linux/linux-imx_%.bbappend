@@ -4,7 +4,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 SRCBRANCH = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
              'v4.11.12-evacharge-se-dfs', 'v4.9.11', d)}"
 SRCREV    = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
-             '9a6be4a56f84fa95ec0c2cb85671972894051ca0', '6e9d0da6341b0ceeff4bc62c936d544d36044958', d)}"
+             'e428eefb422653dcd5983ff685b9b0972a961b3c', '87f8fccf0251394fc6fbd5bdddff573230e4e944', d)}"
 
 # OppCharge requires a different defconfig from its kernel tree, see KERNEL_DEFCONFIG below
 SRC_URI = "\
