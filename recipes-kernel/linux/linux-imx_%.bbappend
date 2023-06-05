@@ -2,11 +2,23 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 # override kernel source
 SRCBRANCH = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
-             'v4.11.12-evacharge-se-dfs', 'v4.9.11', d)}"
-SRCREV    = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
-             'e428eefb422653dcd5983ff685b9b0972a961b3c', '87f8fccf0251394fc6fbd5bdddff573230e4e944', d)}"
+                    'v4.11.12-evacharge-se-dfs', \
+                    bb.utils.contains('MACHINE', 'tarragon', \
+                        'v6.1-tarragon', \
+                        'v4.9.11', \
+                    d), \
+                d)}"
 
-LIC_FILES_CHKSUM = "file://COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
+SRCREV    = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
+                    'e428eefb422653dcd5983ff685b9b0972a961b3c', \
+                    bb.utils.contains('MACHINE', 'tarragon', \
+                        '80048caa15fbdd9e9dcb766110a22ad8565bf98a', \
+                        '87f8fccf0251394fc6fbd5bdddff573230e4e944', \
+                    d), \
+                d)}"
+
+LIC_FILES_CHKSUM = "file://COPYING;md5=${@bb.utils.contains('MACHINE', 'tarragon', \
+                    '6bc538ed5bd9a7fc9398086aedcd7e46', 'd7810fab7487fb0aad327b76f1be7cd7', d)}"
 
 # OppCharge requires a different defconfig from its kernel tree, see KERNEL_DEFCONFIG below
 SRC_URI = "\
@@ -17,7 +29,12 @@ SRC_URI = "\
 LINUX_VERSION_EXTENSION = "-chargebyte"
 
 LINUX_VERSION = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
-                 '4.11.12', '4.9.11', d)}"
+                        '4.11.12', \
+                        bb.utils.contains('MACHINE', 'tarragon', \
+                            '6.1.23', \
+                            '4.9.11', \
+                        d), \
+                    d)}"
 
 KCONFIG_MODE="--alldefconfig"
 
