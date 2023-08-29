@@ -12,7 +12,7 @@ SRCBRANCH = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
 SRCREV    = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
                     'e428eefb422653dcd5983ff685b9b0972a961b3c', \
                     bb.utils.contains('MACHINE', 'tarragon', \
-                        '80048caa15fbdd9e9dcb766110a22ad8565bf98a', \
+                        '9dbc76303a1781b2b8d08361e0c67954ba8d4a8c', \
                         '87f8fccf0251394fc6fbd5bdddff573230e4e944', \
                     d), \
                 d)}"
@@ -31,7 +31,7 @@ LINUX_VERSION_EXTENSION = "-chargebyte"
 LINUX_VERSION = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
                         '4.11.12', \
                         bb.utils.contains('MACHINE', 'tarragon', \
-                            '6.1.23', \
+                            '6.1.49', \
                             '4.9.11', \
                         d), \
                     d)}"
