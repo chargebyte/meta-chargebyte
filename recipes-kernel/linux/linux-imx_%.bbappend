@@ -12,7 +12,7 @@ SRCBRANCH = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
 SRCREV    = "${@bb.utils.contains('SUBMACHINE', 'oppcharge', \
                     'e428eefb422653dcd5983ff685b9b0972a961b3c', \
                     bb.utils.contains('MACHINE', 'tarragon', \
-                        'f50ffd72e5fe959d27a012422f2c269f3d45c8e0', \
+                        'dd7cc7fab58a48f081b12a1677b26614c962b93e', \
                         '87f8fccf0251394fc6fbd5bdddff573230e4e944', \
                     d), \
                 d)}"
