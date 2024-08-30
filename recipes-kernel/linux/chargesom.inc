@@ -1,7 +1,7 @@
 # override kernel source
 SRCBRANCH = "v6.1.55_2.2.0-chargesom"
 
-SRCREV = "b568ba9161f86cc8e4d63a1c77ef699bbf8b9f8f"
+SRCREV = "${AUTOREV}"
 
 LINUX_VERSION = "6.1.55"
 
