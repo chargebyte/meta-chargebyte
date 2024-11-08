@@ -1,4 +1,4 @@
-SRCBRANCH = "v2023.04_2.2.0-phy3-csom"
+SRCBRANCH = "v2024.04-2.0.0-phy6-csom"
 SRC_URI = "git://github.com/chargebyte/u-boot.git;protocol=https;branch=${SRCBRANCH}"
-SRCREV = "8747d69aed4ce24c5bff3f076285a2cea3e2886f"
+SRCREV = "fa9c2328a218990466c503f82b62b8385176d376"
 COMPATIBLE_MACHINE = "(mx93)"
