@@ -13,7 +13,7 @@ do_install() {
     install -p -m644 -o root -g root ${S}/firmware_bin/usb/wlan/*.ini ${D}${nonarch_base_libdir}/firmware/wlan/
     # udev rule
     install -d ${D}${nonarch_base_libdir}/udev/rules.d/
-    install -p -m644 -o root -g root ${WORKDIR}/*.rules ${D}${nonarch_base_libdir}/udev/rules.d/
+    install -p -m644 -o root -g root ${UNPACKDIR}/*.rules ${D}${nonarch_base_libdir}/udev/rules.d/
 }
 
 do_compile() {
