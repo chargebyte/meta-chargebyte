@@ -5,7 +5,10 @@ SRCREV = "${AUTOREV}"
 
 LINUX_VERSION = "6.12.34"
 
-# tarragpn has in-tree defconfig
-KBUILD_DEFCONFIG = "tarragon_defconfig"
+# tarragon has in-tree defconfig
+# Must be an override (not a plain assignment): linux-imx_6.18.bb sets
+# KBUILD_DEFCONFIG:mx6-generic-bsp, which is override-qualified and would
+# otherwise silently win over a plain assignment here regardless of parse order.
+KBUILD_DEFCONFIG:tarragon = "tarragon_defconfig"
 
 COMPATIBLE_MACHINE = "(mx6)"
