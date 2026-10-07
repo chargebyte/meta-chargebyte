@@ -15,7 +15,6 @@ SRC_URI = " \
 "
 SRCREV = "c316e7735aa26c891058253c329462d770bdc6fc"
 
-S = "${WORKDIR}/git"
 
 INSANE_SKIP:${PN} = "already-stripped"
 EXTRA_OEMAKE:class-target = 'CROSS_COMPILE=${TARGET_PREFIX} CC="${CC} ${CFLAGS} ${LDFLAGS}" HOSTCC="${BUILD_CC} ${BUILD_CFLAGS} ${BUILD_LDFLAGS}" V=1'
@@ -33,7 +32,7 @@ do_install () {
 	install -d ${D}${sysconfdir}
 	install -m 755 ${S}/tools/env/fw_printenv ${D}${base_sbindir}/fw_printenv
 	ln -sf fw_printenv ${D}${base_sbindir}/fw_setenv
-	install -m 0644 ${WORKDIR}/fw_env.config ${D}${sysconfdir}/fw_env.config
+	install -m 0644 ${UNPACKDIR}/fw_env.config ${D}${sysconfdir}/fw_env.config
 }
 
 do_install:class-cross () {

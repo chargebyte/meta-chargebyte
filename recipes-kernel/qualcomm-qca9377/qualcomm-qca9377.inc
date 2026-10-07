@@ -9,4 +9,3 @@ SRCREV = "adcc3659f961fd535cd5dce55989e0393613ceaa"
 PE = "1"
 PV = "0.0+git${SRCPV}"
 
-S = "${WORKDIR}/git"
